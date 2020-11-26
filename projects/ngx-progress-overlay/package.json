@@ -1,6 +1,25 @@
 {
   "name": "ngx-progress-overlay",
-  "version": "0.0.1",
+  "version": "1.0.2",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monkeyscript/ngx-progress-overlay"
+  },
+  "homepage": "https://monkeyscript.github.io/ngx-progress-overlay/",
+  "description": "A donut progress bar with full screen overlay.",
+  "keywords": [
+    "angular", 
+    "progress", 
+    "progress bar", 
+    "overlay", 
+    "spinner", 
+    "loading", 
+    "loader", 
+    "progress loader", 
+    "progress circle", 
+    "ngx loader"
+  ],
   "peerDependencies": {
     "@angular/common": "^11.0.1",
     "@angular/core": "^11.0.1"

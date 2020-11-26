@@ -1,27 +1,80 @@
-# NgxProgressOverlayWs
+# Ngx-Progress-Overlay
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
+![npm](https://img.shields.io/npm/v/ngx-progress-overlay)
+![David](https://img.shields.io/david/monkeyscript/ngx-progress-overlay)
+![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-progress-overlay)
+![NPM](https://img.shields.io/npm/l/ngx-progress-overlay)
 
-## Development server
+A simple donut progress bar with full screen overlay.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Demo : [https://monkeyscript.github.io/ngx-progress-overlay/](https://monkeyscript.github.io/ngx-progress-overlay/)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Using npm:
 
-## Build
+```bash
+$ npm install ngx-progress-overlay
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Usage
 
-## Running unit tests
+Import `NgxProgressOverlayModule` in the root module (`AppModule`) :
+```typescript
+import { NgxProgressOverlayModule } from 'ngx-progress-overlay';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  imports: [
+    NgxProgressOverlayModule
+  ]
+})
 
-## Running end-to-end tests
+export class AppModule { }
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Add `NgxProgressOverlayService` service in your component : 
+```typescript
+import { NgxProgressOverlayService } from 'ngx-progress-overlay';
 
-## Further help
+class AppComponent implements OnInit {
+  
+  constructor(private progressOverlay: NgxProgressOverlayService) { }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  ngOnInit() {
+
+    // Shows progress bar
+    this.progressOverlay.show('text','#00e676');
+
+    // Set progress value
+    this.progressOverlay.setProgress(50);
+
+    // Hides progress bar
+    this.progressOverlay.hide();
+
+  }
+
+}
+```
+
+Finally, use `NgxProgressOverlayComponent` in your template
+```html
+<ngx-progress-overlay></ngx-progress-overlay>
+```
+
+## Methods
+
+- **show()** : Toggles on the overlay. Takes in two inputs; the text to be shown and the donut color in HEX(optional).
+- **setProgress()** : Sets the progress value. Takes the value(number) as input.
+- **hide()** : Hides the overlay.
+
+## Issues & Contributions
+
+For a new feature, create an issue [here](https://github.com/monkeyscript/ngx-progress-overlay/issues). Open to all contributions :)
+
+## License
+
+Apache-2.0. Please see the [license file](https://github.com/monkeyscript/ngx-progress-overlay/blob/master/LICENSE) for more information.
+
+## TODO
+Demo
+linear progress

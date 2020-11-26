@@ -21,8 +21,10 @@
     ],
     "paths": {
       "ngx-progress-overlay": [
-        "dist/ngx-progress-overlay/ngx-progress-overlay",
         "dist/ngx-progress-overlay"
+      ],
+      "ngx-progress-overlay/*": [
+        "dist/ngx-progress-overlay/*"
       ]
     }
   },
