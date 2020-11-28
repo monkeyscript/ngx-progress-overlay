@@ -5,7 +5,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-progress-overlay)
 ![NPM](https://img.shields.io/npm/l/ngx-progress-overlay)
 
-A simple donut progress bar with full screen overlay.
+A simple donut progress bar with a full-screen overlay.
 
 Demo : [https://monkeyscript.github.io/ngx-progress-overlay/](https://monkeyscript.github.io/ngx-progress-overlay/)
 
