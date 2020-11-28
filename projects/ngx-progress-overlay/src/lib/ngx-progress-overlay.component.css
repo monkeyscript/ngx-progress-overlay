@@ -18,11 +18,10 @@
     text-align: center;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+    transition: ease 1s;
 }
 
 .progress-content-text {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    fill: white;
     -moz-transform: translateY(0.25em);
     -ms-transform: translateY(0.25em);
     -webkit-transform: translateY(0.25em);

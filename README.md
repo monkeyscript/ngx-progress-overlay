@@ -43,7 +43,7 @@ class AppComponent implements OnInit {
   ngOnInit() {
 
     // Shows progress bar
-    this.progressOverlay.show('text','#00e676');
+    this.progressOverlay.show('text','#ffd740','white','lightslategray',1);
 
     // Set progress value
     this.progressOverlay.setProgress(50);
@@ -63,7 +63,12 @@ Finally, use `NgxProgressOverlayComponent` in your template
 
 ## Methods
 
-- **show()** : Toggles on the overlay. Takes in two inputs; the text to be shown and the donut color in HEX(optional).
+- **show()** : Toggles on the overlay. Takes in five inputs, 
+  - overlay text | string : the text to be shown beneath the value
+  - progress bar color | string : the donut color in HEX(optional)
+  - progress value color | string : the progress value color in HEX(optional)
+  - overlay text color | string : the overlay text color in HEX(optional)
+  - donut width | number : the width of donut(optional)
 - **setProgress()** : Sets the progress value. Takes the value(number) as input.
 - **hide()** : Hides the overlay.
 

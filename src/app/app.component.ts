@@ -43,8 +43,8 @@ class AppComponent implements OnInit {
         
     ngOnInit() {
     
-        // Shows progress bar
-        this.progressOverlay.show('text','#00e676');
+        // Shows progress bar (Params : overlay text, progress bar color, progress value color, overlay text color, donut width)
+        this.progressOverlay.show('text','#ffd740','white','lightslategray',1);
     
         // Set progress value
         this.progressOverlay.setProgress(50);
@@ -62,7 +62,7 @@ class AppComponent implements OnInit {
   }
 
   test(){
-    this.progressService.show('Processing')
+    this.progressService.show('Sit back & relax!','#ffd740','white','lightslategray',1);
     setTimeout(()=>{ this.progressService.setProgress(10) }, 1000);
     setTimeout(()=>{ this.progressService.setProgress(20) }, 2000);
     setTimeout(()=>{ this.progressService.setProgress(30) }, 3000);

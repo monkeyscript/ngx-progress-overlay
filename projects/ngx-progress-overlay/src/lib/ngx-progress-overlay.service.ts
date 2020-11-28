@@ -11,19 +11,29 @@ export class NgxProgressOverlayService {
   private valueSource = new Subject<number>();
   private textSource = new Subject<string>();
   private colorSource = new Subject<string>();
+  private valueColorSource = new Subject<string>();
+  private textColorSource = new Subject<string>();
+  private donutWidthSource = new Subject<number>();
+
   // Corresponding observables
   display$ = this.displaySource.asObservable();
   value$ = this.valueSource.asObservable();
   text$ = this.textSource.asObservable();
   color$ = this.colorSource.asObservable();
+  valueColor$ = this.valueColorSource.asObservable();
+  textColor$ = this.textColorSource.asObservable();
+  donutWidth$ = this.donutWidthSource.asObservable();
   
   constructor() { }
 
   // Show progress bar
-  show(text:string,color?:string){
+  show(text:string,color?:string,valueColor?:string,textColor?:string,donutWidth?:number){
     this.valueSource.next(0);
     this.textSource.next(text)
     this.colorSource.next(color)
+    this.valueColorSource.next(valueColor);
+    this.textColorSource.next(textColor);
+    this.donutWidthSource.next(donutWidth);
     this.displaySource.next(true);
   }
 

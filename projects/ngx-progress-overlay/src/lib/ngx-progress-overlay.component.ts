@@ -8,23 +8,29 @@ import { NgxProgressOverlayService } from './ngx-progress-overlay.service'
 })
 export class NgxProgressOverlayComponent implements OnInit {
 
-  progressColor     : string = '#00e676'
+  progressColor     : string = '#ffd740'
   progressValue     : number = 0;
   progressText      : string = '';
   displayToggle     : boolean = false;
   progressFormatted : string = '0 100'
+
+  valueColor        : string = 'white';
+  textColor         : string = 'white';
+  donutWidth        : number = 1;
 
   constructor(
     private dataService : NgxProgressOverlayService
   ) { }
 
   ngOnInit() {
+
     // Subscribe for toggle display
     this.dataService.display$.subscribe(
       d => {
         this.displayToggle = d; 
       }
     )
+    
     // Subscribe for value changes
     this.dataService.value$.subscribe(
       v => {
@@ -39,17 +45,46 @@ export class NgxProgressOverlayComponent implements OnInit {
         this.progressFormatted = this.progressValue.toString() + ' ' + remainingValue.toString()
       }
     )
+    
     // Subscribe for text changes
     this.dataService.text$.subscribe(
       t => {
         this.progressText = t; 
       }
     )
+    
     // Subscribe for color changes
     this.dataService.color$.subscribe(
       c => {
         if(c!=undefined && c!=''){
           this.progressColor = c; 
+        }
+      }
+    )
+    
+    // Subscribe for value color changes
+    this.dataService.valueColor$.subscribe(
+      c => {
+        if(c!=undefined && c!=''){
+          this.valueColor = c; 
+        }
+      }
+    )
+    
+    // Subscribe for text color changes
+    this.dataService.textColor$.subscribe(
+      c => {
+        if(c!=undefined && c!=''){
+          this.textColor = c; 
+        }
+      }
+    )
+
+    // Subscribe for donut width changes
+    this.dataService.donutWidth$.subscribe(
+      w => {
+        if(w!=undefined && w>0){
+          this.donutWidth = w; 
         }
       }
     )
