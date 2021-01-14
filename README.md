@@ -79,7 +79,3 @@ For a new feature, create an issue [here](https://github.com/monkeyscript/ngx-pr
 ## License
 
 Apache-2.0. Please see the [license file](https://github.com/monkeyscript/ngx-progress-overlay/blob/master/LICENSE) for more information.
-
-## TODO
-Demo
-linear progress
