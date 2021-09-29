@@ -8,7 +8,7 @@ import { NgxProgressOverlayService } from './ngx-progress-overlay.service'
 })
 export class NgxProgressOverlayComponent implements OnInit {
 
-  progressColor     : string = '#ffd740'
+  progressColor     : string = '#c2185b'
   progressValue     : number = 0;
   progressText      : string = '';
   displayToggle     : boolean = false;
