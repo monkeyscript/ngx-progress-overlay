@@ -10,30 +10,59 @@
     A simple donut progress bar with full screen overlay.
   </div>
 
-  <br><br>
-
-  <div class="align-center">
-    <button mat-raised-button color="accent" (click)="test()">Start Loader</button>
-  </div>
-
-  <h4>Installation</h4>
-
-  <pre class="code">{{code.installation}}</pre>
-
-  <h4>Usage</h4>
-
-  <div>Import `NgxProgressOverlayModule` in the root module (`AppModule`) :</div>
-  <pre class="code">{{code.usage.step1}}</pre>
-  <div>Add `NgxProgressOverlayService` service in your component : </div>
-  <pre class="code">{{code.usage.step2}}</pre>
-  <div>Finally, use NgxProgressOverlayComponent in your template</div>
-  <pre class="code">{{code.usage.step3}}</pre>
-
   <br>
 
   <div class="align-center">
+    <button mat-raised-button color="primary" (click)="test()">Start Loader</button>
+  </div>
+
+  <br><br>
+
+  <h4>Installation</h4>
+
+  <mat-card>
+    <pre class="code">{{code.installation}}</pre>
+  </mat-card>
+
+  <br><br>
+
+  <h4>Usage</h4>
+
+  <div class="text-secondary">Import `NgxProgressOverlayModule` in the root module (`AppModule`) :</div>
+  
+  <br>
+
+  <mat-card>
+    <pre class="code">{{code.usage.step1}}</pre>
+  </mat-card>
+  
+  <br>
+
+  <div class="text-secondary">Add `NgxProgressOverlayService` service in your component : </div>
+  
+  <br>
+  
+  <mat-card>
+    <pre class="code">{{code.usage.step2}}</pre>
+  </mat-card>
+
+  <br>
+  
+  <div class="text-secondary">Finally, use NgxProgressOverlayComponent in your template</div>
+  
+  <br>
+  
+  <mat-card>
+    <pre class="code">{{code.usage.step3}}</pre>
+  </mat-card>
+
+  <br><br>
+
+  <div class="align-center">
     <a matTooltip="Github" target="_blank" href="https://github.com/monkeyscript/ngx-progress-overlay">
-      <i class="fa fa-github fa-lg"></i>
+      <button mat-icon-button color="primary">
+        <i class="fa fa-github fa-2x"></i>
+      </button>
     </a>
   </div>
 

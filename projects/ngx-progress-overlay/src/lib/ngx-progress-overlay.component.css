@@ -46,3 +46,7 @@
     -webkit-transform: translateY(0.7em);
     transform: translateY(0.7em);
 }
+
+.donut-segment {
+    transition: .5s;
+}
