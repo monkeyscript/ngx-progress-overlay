@@ -68,12 +68,11 @@ class AppComponent implements OnInit {
     setTimeout(()=>{ this.progressService.setProgress(30) }, 3000);
     setTimeout(()=>{ this.progressService.setProgress(40) }, 4000);
     setTimeout(()=>{ this.progressService.setProgress(50) }, 5000);
-    setTimeout(()=>{ this.progressService.setProgress(50) }, 6000);
-    setTimeout(()=>{ this.progressService.setProgress(60) }, 7000);
-    setTimeout(()=>{ this.progressService.setProgress(70) }, 8000);
-    setTimeout(()=>{ this.progressService.setProgress(80) }, 9000);
-    setTimeout(()=>{ this.progressService.setProgress(90) }, 10000);
-    setTimeout(()=>{ this.progressService.setProgress(100) }, 11000);
-    setTimeout(()=>{ this.progressService.hide() }, 12000);
+    setTimeout(()=>{ this.progressService.setProgress(60) }, 6000);
+    setTimeout(()=>{ this.progressService.setProgress(70) }, 7000);
+    setTimeout(()=>{ this.progressService.setProgress(80) }, 8000);
+    setTimeout(()=>{ this.progressService.setProgress(90) }, 9000);
+    setTimeout(()=>{ this.progressService.setProgress(100) }, 10000);
+    setTimeout(()=>{ this.progressService.hide() }, 11000);
   }
 }
