@@ -17,6 +17,7 @@ export class NgxProgressOverlayComponent implements OnInit {
   valueColor        : string = 'white';
   textColor         : string = 'white';
   donutWidth        : number = 1;
+  overlayColor      : string = 'rgba(0,0,0,0.8)';
 
   constructor(
     private dataService : NgxProgressOverlayService
@@ -88,6 +89,16 @@ export class NgxProgressOverlayComponent implements OnInit {
         }
       }
     )
+
+    // Subscribe for overlay color changes
+    this.dataService.overlayColor$.subscribe(
+      c => {
+        if(c!=undefined && c!=''){
+          this.overlayColor = c; 
+        }
+      }
+    )
+
   }
 
 }
