@@ -1,7 +1,6 @@
 # Ngx-Progress-Overlay
 
 ![npm](https://img.shields.io/npm/v/ngx-progress-overlay)
-![David](https://img.shields.io/david/monkeyscript/ngx-progress-overlay)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-progress-overlay)
 ![NPM](https://img.shields.io/npm/l/ngx-progress-overlay)
 
