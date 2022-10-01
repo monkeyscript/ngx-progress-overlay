@@ -147,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "ngx-progress-overlay-ws"
+  "defaultProject": "ngx-progress-overlay-ws",
+  "cli": {
+    "analytics": false
+  }
 }
