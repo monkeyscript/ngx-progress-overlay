@@ -9,20 +9,20 @@
   "homepage": "https://monkeyscript.github.io/ngx-progress-overlay/",
   "description": "A donut progress bar with full screen overlay.",
   "keywords": [
-    "angular", 
-    "progress", 
-    "progress bar", 
-    "overlay", 
-    "spinner", 
-    "loading", 
-    "loader", 
-    "progress loader", 
-    "progress circle", 
+    "angular",
+    "progress",
+    "progress bar",
+    "overlay",
+    "spinner",
+    "loading",
+    "loader",
+    "progress loader",
+    "progress circle",
     "ngx loader"
   ],
   "peerDependencies": {
-    "@angular/common": "^13.0.3",
-    "@angular/core": "^13.0.3"
+    "@angular/common": "^16.0.2",
+    "@angular/core": "^16.0.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"

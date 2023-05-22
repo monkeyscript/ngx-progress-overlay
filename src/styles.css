@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -21,35 +21,36 @@ body {
   padding-right: 16px;
   padding-left: 16px;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
 }
 
-@media (min-width:570px) {
+@media (min-width: 570px) {
   .container {
-    max-width: 540px
+    max-width: 540px;
   }
 }
 
-@media (min-width:760px) {
+@media (min-width: 760px) {
   .container {
-    max-width: 720px
+    max-width: 720px;
   }
 }
 
-@media (min-width:990px) {
+@media (min-width: 990px) {
   .container {
-    max-width: 960px
+    max-width: 960px;
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1140px
+    max-width: 1140px;
   }
 }
 
 .code {
   overflow-x: auto;
+  padding: 0 1rem;
 }
 
 .text-secondary {
