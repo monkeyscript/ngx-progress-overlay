@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build_lib": "ng build ngx-progress-overlay --configuration production",
-    "copy-license": "copy .\\LICENSE .\\dist\\ngx-progress-overlay",
-    "copy-readme": "copy .\\README.md .\\dist\\ngx-progress-overlay",
+    "copy-license": "cp LICENSE dist/ngx-progress-overlay",
+    "copy-readme": "cp README.md dist/ngx-progress-overlay",
     "copy-files": "npm run copy-license && npm run copy-readme",
     "npm_pack": "cd dist/ngx-progress-overlay && npm pack",
     "package": "npm run build_lib && npm run copy-files && npm run npm_pack"
