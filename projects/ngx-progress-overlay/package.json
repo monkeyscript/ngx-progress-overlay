@@ -1,6 +1,6 @@
 {
   "name": "ngx-progress-overlay",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -21,8 +21,8 @@
     "ngx loader"
   ],
   "peerDependencies": {
-    "@angular/common": "^16.0.2",
-    "@angular/core": "^16.0.2"
+    "@angular/common": "^16.2.7",
+    "@angular/core": "^16.2.7"
   },
   "dependencies": {
     "tslib": "^2.3.0"
