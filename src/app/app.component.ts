@@ -3,6 +3,7 @@ import { NgxProgressOverlayService } from '../../projects/ngx-progress-overlay/s
 
 @Component({
   selector: 'app-root',
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

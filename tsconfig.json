@@ -11,20 +11,20 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "es2020",
+    "module": "ES2022",
     "lib": [
-      "es2018",
+      "ES2022",
       "dom"
     ],
     "paths": {
       "ngx-progress-overlay": [
-        "dist/ngx-progress-overlay"
+        "projects/ngx-progress-overlay/src/public-api.ts"
       ],
       "ngx-progress-overlay/*": [
-        "dist/ngx-progress-overlay/*"
+        "projects/ngx-progress-overlay/src/*"
       ]
     },
     "useDefineForClassFields": false

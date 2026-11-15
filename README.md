@@ -1,25 +1,55 @@
 # Ngx-Progress-Overlay
 
-![npm](https://img.shields.io/npm/v/ngx-progress-overlay)
-![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-progress-overlay)
-![NPM](https://img.shields.io/npm/l/ngx-progress-overlay)
+A simple, customizable donut progress bar with a full-screen overlay for Angular applications.
 
-A simple donut progress bar with a full-screen overlay.
+[![npm](https://img.shields.io/npm/v/ngx-progress-overlay.svg)](https://www.npmjs.com/package/ngx-progress-overlay)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/ngx-progress-overlay.svg)](https://bundlephobia.com/result?p=ngx-progress-overlay)
+[![License](https://img.shields.io/npm/l/ngx-progress-overlay.svg)](https://github.com/monkeyscript/ngx-progress-overlay/blob/main/LICENSE)
 
-Demo : [https://monkeyscript.github.io/ngx-progress-overlay/](https://monkeyscript.github.io/ngx-progress-overlay/)
+Demo: [https://monkeyscript.github.io/ngx-progress-overlay/](https://monkeyscript.github.io/ngx-progress-overlay/)
+
+---
+
+## Features
+
+- 🍩 Clean SVG-based circular donut progress ring with percentage readout
+- 🎨 Fully customizable colors (donut, value, text, and overlay backdrop)
+- 📐 Adjustable donut stroke width
+- 🚀 Standalone component support (Angular 16+) with backward-compatible `NgModule`
+- 🛡️ Accessible (`role="progressbar"` with ARIA attributes)
+- 🧹 Leak-free RxJS lifecycle management
+
+---
 
 ## Installation
 
-Using npm:
-
 ```bash
-$ npm install ngx-progress-overlay
+npm install ngx-progress-overlay
 ```
+
+---
 
 ## Usage
 
-Import `NgxProgressOverlayModule` in the root module (`AppModule`) :
+### 1. Import Component or Module
+
+**Standalone Components (Recommended):**
 ```typescript
+import { Component } from '@angular/core';
+import { NgxProgressOverlayComponent } from 'ngx-progress-overlay';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [NgxProgressOverlayComponent],
+  template: `<ngx-progress-overlay></ngx-progress-overlay>`
+})
+export class AppComponent {}
+```
+
+**NgModule-based Applications:**
+```typescript
+import { NgModule } from '@angular/core';
 import { NgxProgressOverlayModule } from 'ngx-progress-overlay';
 
 @NgModule({
@@ -27,54 +57,83 @@ import { NgxProgressOverlayModule } from 'ngx-progress-overlay';
     NgxProgressOverlayModule
   ]
 })
-
 export class AppModule { }
 ```
 
-Add `NgxProgressOverlayService` service in your component : 
+### 2. Control with `NgxProgressOverlayService`
+
+Inject `NgxProgressOverlayService` into your component or service:
+
 ```typescript
+import { Component, OnInit } from '@angular/core';
 import { NgxProgressOverlayService } from 'ngx-progress-overlay';
 
-class AppComponent implements OnInit {
-  
+@Component({
+  selector: 'app-example',
+  templateUrl: './app-example.component.html'
+})
+export class AppExampleComponent implements OnInit {
+
   constructor(private progressOverlay: NgxProgressOverlayService) { }
 
-  ngOnInit() {
+  startProgress() {
+    // 1. Show overlay using a configuration object:
+    this.progressOverlay.show({
+      text: 'Uploading files...',
+      color: '#ffd740',
+      valueColor: 'white',
+      textColor: 'lightslategray',
+      donutWidth: 2,
+      overlayColor: 'rgba(0,0,0,0.85)'
+    });
 
-    // Shows progress bar
-    this.progressOverlay.show('text','#ffd740','white','lightslategray',1);
+    // Alternatively, using positional parameters:
+    // this.progressOverlay.show('Uploading files...', '#ffd740', 'white', 'lightslategray', 2, 'rgba(0,0,0,0.85)');
 
-    // Set progress value
+    // 2. Update progress value (0 to 100):
     this.progressOverlay.setProgress(50);
 
-    // Hides progress bar
+    // 3. Hide overlay when done:
     this.progressOverlay.hide();
-
   }
 
 }
 ```
 
-Finally, use `NgxProgressOverlayComponent` in your template
+### 3. Add Component Template
+
+Place `<ngx-progress-overlay></ngx-progress-overlay>` in your root template (e.g. `app.component.html`):
+
 ```html
 <ngx-progress-overlay></ngx-progress-overlay>
 ```
 
-## Methods
+---
 
-- **show()** : Toggles on the overlay. Takes in five inputs, 
-  - overlay text | string : the text to be shown beneath the value
-  - progress bar color | string : the donut color in HEX(optional)
-  - progress value color | string : the progress value color in HEX(optional)
-  - overlay text color | string : the overlay text color in HEX(optional)
-  - donut width | number : the width of donut(optional)
-- **setProgress()** : Sets the progress value. Takes the value(number) as input.
-- **hide()** : Hides the overlay.
+## API Reference
 
-## Issues & Contributions
+### `NgxProgressOverlayService`
 
-For a new feature, create an issue [here](https://github.com/monkeyscript/ngx-progress-overlay/issues). Open to all contributions :)
+| Method | Signature | Description |
+| :--- | :--- | :--- |
+| `show(config)` | `show(config: ProgressOverlayConfig): void` | Opens overlay with configuration object. |
+| `show(...)` | `show(text?, color?, valueColor?, textColor?, donutWidth?, overlayColor?): void` | Opens overlay with positional parameters. |
+| `setProgress(value)` | `setProgress(value: number): void` | Updates current progress value (0 - 100). |
+| `hide()` | `hide(): void` | Hides the overlay and restores background. |
+
+### `ProgressOverlayConfig`
+
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `text` | `string` | `''` | Text displayed underneath the progress number. |
+| `color` | `string` | `'#c2185b'` | Color of the progress donut stroke (HEX / CSS color). |
+| `valueColor` | `string` | `'white'` | Color of the progress percentage value text. |
+| `textColor` | `string` | `'white'` | Color of the overlay subtitle text. |
+| `donutWidth` | `number` | `1` | Stroke width of the donut progress bar. |
+| `overlayColor` | `string` | `'rgba(0,0,0,0.8)'` | Background overlay backdrop color. |
+
+---
 
 ## License
 
-Apache-2.0. Please see the [license file](https://github.com/monkeyscript/ngx-progress-overlay/blob/master/LICENSE) for more information.
+[Apache-2.0](https://github.com/monkeyscript/ngx-progress-overlay/blob/main/LICENSE) © [monkeyscript](https://github.com/monkeyscript)

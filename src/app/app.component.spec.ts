@@ -1,12 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { NgxProgressOverlayComponent } from '../../projects/ngx-progress-overlay/src/lib/ngx-progress-overlay.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
+      imports: [
+        MaterialModule,
+        NoopAnimationsModule,
+        NgxProgressOverlayComponent
+      ]
     }).compileComponents();
   });
 
@@ -25,7 +31,7 @@ describe('AppComponent', () => {
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ngx-progress-overlay-ws app is running!');
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('mat-toolbar span')?.textContent).toContain('Ngx-Progress-Overlay');
   });
 });

@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;
     z-index: 9999;
-    cursor: pointer;
+    cursor: default;
 }
 
 .progress-overlay-content{
